@@ -1,0 +1,48 @@
+<meta charset="utf-8">
+
+<mat-expansion-panel>
+
+  <mat-expansion-panel-header>
+    <mat-panel-title>Endereço</mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <form [formGroup]="end">
+    <mat-form-field>
+      <input formControlName="cep" id="txt-cep" matInput placeholder="CEP:" type="text" maxlength="9" mask="00000-000" />
+    </mat-form-field>
+    <br />
+
+    <mat-form-field class="cidade">
+      <input formControlName="cidade" id="txt-cidade" matInput placeholder="Cidade:" type="text" maxlength="30"/>
+    </mat-form-field>
+
+    <mat-form-field class="bairro">
+      <input formControlName="bairro" id="txt-bairro" matInput placeholder="Bairro:" type="text" maxlength="30"/>
+    </mat-form-field>
+    <br />
+
+    <mat-form-field class="logradouro">
+      <input formControlName="logradouro" id="txt-logradouro" matInput placeholder="Logradouro:" type="text" maxlength="50"/>
+    </mat-form-field>
+
+    <mat-form-field class="numero">
+      <input formControlName="numero" id="txt-numero" matInput placeholder="Número:" type="text" maxlength="10"/>
+    </mat-form-field>
+    <br />
+
+    <mat-form-field class="campoOitentaPorCento">
+      <input formControlName="pontoReferencia" id="txt-pontoReferencia" matInput placeholder="Ponto de referência:" type="text"
+      maxlength="150"/>
+    </mat-form-field>
+    <br />
+    <!--
+    <mat-checkbox [formControl]="residoAp">Resido em apartamento:</mat-checkbox>
+    <br />
+    
+    <app-form-end-apartamento *ngIf="residoAp"></app-form-end-apartamento>
+-->
+    <button type="submit" (click)="onSubmit(end)">Submit</button>
+
+  </form>
+  {{ end?.value | json }} and {{ end?.valid }}
+</mat-expansion-panel>

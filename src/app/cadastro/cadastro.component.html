@@ -1,0 +1,13 @@
+<p> {{ evaluationForm?.value | json }} and {{ evaluationForm?.valid }} </p>
+
+<form [formGroup]="evaluationForm" novalidate>
+
+  <!--in the son component will replace for the <ng-content></ng-content> -->
+  <input type="text" class="form-control" placeholder="Vehicle" formControlName="vehicle">
+  <input type="text" class="form-control" placeholder="ano" formControlName="year">
+  <input type="text" class="form-control" placeholder="valor" formControlName="value">
+
+
+  <button type="submit" class="btn btn-primary btn-block" [disabled]="!evaluationForm.valid" (click)="onSubmit(evaluationForm)">Submit</button>
+</form>
+

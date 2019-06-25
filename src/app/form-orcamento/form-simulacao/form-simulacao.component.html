@@ -1,0 +1,65 @@
+<meta charset="utf8">
+
+<mat-expansion-panel>
+
+  <mat-expansion-panel-header>
+    <mat-panel-title>Simule sua festa</mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <div class="centralizador">
+    <mat-form-field class="">
+      <input matInput [min]="dataMinima" [matDatepicker]="picker" #dataEscolhida placeholder="Data da festa">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field><br />
+
+    <button mat-button (click)="consultaDisponibilidadeData()">Verificar disponibilidade</button>
+
+  </div><br />
+
+  <table *ngIf="dataDisponivel" class="table">
+    <tr>
+      <th>Itens</th>
+      <th>Disponíveis</th>
+    </tr>
+    <tr *ngFor="let prodDisponivel of produtosDisponiveis">
+      <td>{{prodDisponivel.descItem}}</td>
+      <td>{{prodDisponivel.qtdItem}}</td>
+    </tr>
+  </table>
+  
+  <div class="centralizador danger" *ngIf="dataIndisponivel">
+    Lamentamos, todas as cabanas para esta data já estão locadas :-(
+  </div>
+
+
+
+
+
+
+
+  <div class="centralizador">
+    <div class="radioButton">
+      <mat-label class="radioButton" id="metodoDeCalculoDaFesta">Simular festa por:</mat-label><br />
+      <mat-radio-group aria-label="metodoDeCalculoDaFesta">
+        <mat-radio-button (click)="metodoDeCalculoPorCrianca()" class="radioButton" value="porCriancas">Total de Crianças
+        </mat-radio-button><br />
+        <mat-radio-button (click)="metodoDeCalculoPorCabana()" class="radioButton" value="porCabanas">
+          Total de Cabanas
+        </mat-radio-button>
+      </mat-radio-group><br />
+    </div>
+
+    <div *ngIf="calculoPorCrianca" class="alinhaInput">
+      <mat-form-field>
+        <input matInput id="txt-total-criancas" type="number" [min]="3" placeholder="Total de crianças:" />
+      </mat-form-field>
+    </div>
+
+    <div *ngIf="calculoPorCabana" class="alinhaInput">
+      <mat-form-field>
+        <input matInput id="txt-total-cabanas" type="number" [min]="2" [max]="produtosDisponiveis" placeholder="Total de cabanas:" />
+      </mat-form-field>
+    </div>
+  </div>
+</mat-expansion-panel>
