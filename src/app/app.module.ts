@@ -22,7 +22,16 @@ import { FormSimulacaoComponent } from './form-orcamento/form-simulacao/form-sim
 import { HttpClientModule } from '@angular/common/http';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { EnderecoServiceService } from './form-orcamento/form-endereco/endereco-service.service'
-import {NgxMaskModule} from 'ngx-mask'
+import { NgxMaskModule } from 'ngx-mask';
+import { FormFestaComponent } from './form-orcamento/form-festa/form-festa.component';
+import { FormAniversarianteComponent } from './form-orcamento/form-aniversariante/form-aniversariante.component';
+import { MenuComponent } from './menu/menu.component';
+import { ProdutoComponent } from './produto/produto.component';
+import { ClienteComponent } from './cliente/cliente.component';
+import { FestaComponent } from './festa/festa.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { DetailProdutoComponent } from './produto/detail-produto/detail-produto.component';
+import { ProdutoDetailComponent } from './produto/produto-detail/produto-detail.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +42,16 @@ import {NgxMaskModule} from 'ngx-mask'
     FormEndApartamentoComponent,
     FormDadosPessoaisComponent,
     FormSimulacaoComponent,
-    CadastroComponent
+    CadastroComponent,
+    FormFestaComponent,
+    FormAniversarianteComponent,
+    MenuComponent,
+    ProdutoComponent,
+    ClienteComponent,
+    FestaComponent,
+    PageNotFoundComponent,
+    DetailProdutoComponent,
+    ProdutoDetailComponent
   ],
   imports: [
     CommonModule,

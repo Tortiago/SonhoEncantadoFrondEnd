@@ -12,7 +12,12 @@ import {
   MatCardModule,
   MatNativeDateModule,
   MatButtonModule,
-  MatTableModule
+  MatTableModule,
+  MatDatepickerModule,
+  MatSidenavModule,
+  MatListModule,
+  MatIconModule,
+  MatProgressSpinnerModule
 
 } from '@angular/material';
 
@@ -29,7 +34,12 @@ import {
     MatCardModule,
     MatNativeDateModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    MatDatepickerModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     CommonModule,
@@ -42,7 +52,12 @@ import {
     MatCardModule,
     MatNativeDateModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    MatDatepickerModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }

@@ -1,0 +1,56 @@
+<h1>Dados da Festa</h1>
+
+<mat-form-field>
+  <input matInput [min]="minDate" [matDatepicker]="picker" placeholder="Selecione uma data:" disabled>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker disabled=false></mat-datepicker>
+</mat-form-field>
+
+<mat-form-field class="temaFesta">
+  <mat-label>Tema da decoração:</mat-label>
+  <mat-select [formControl]="temaDecoracaoControl">
+    <mat-optgroup *ngFor="let group of temaGroups" [label]="group.name">
+      <mat-option *ngFor="let tema of group.tema" [value]="tema.value">
+        {{tema.viewValue}}
+      </mat-option>
+    </mat-optgroup>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field class="qtdCabanas">
+  <input matInput type="number" name="qtdCabanas" id="qtdCabanas">
+</mat-form-field>
+<br>
+
+<mat-form-field class="horarios">
+  <mat-label>Hora de início:</mat-label>
+  <mat-select [formControl]="hrInicioFestaControl">
+    <mat-optgroup *ngFor="let group of horaGroups" [label]="group.name">
+      <mat-option *ngFor="let hora of group.hora" [value]="hora.value">
+        {{hora.viewValue}}
+      </mat-option>
+    </mat-optgroup>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field class="horarios">
+  <mat-label>Hora de montagem:</mat-label>
+  <mat-select [formControl]="hrMontagemControl">
+    <mat-optgroup *ngFor="let group of horaGroups" [label]="group.name">
+      <mat-option *ngFor="let hora of group.hora" [value]="hora.value">
+        {{hora.viewValue}}
+      </mat-option>
+    </mat-optgroup>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field class="horarios">
+  <mat-label>Hora de desmontagem:</mat-label>
+  <mat-select [formControl]="hrDesmontagemControl">
+    <mat-optgroup *ngFor="let group of horaGroups" [label]="group.name">
+      <mat-option *ngFor="let hora of group.hora" [value]="hora.value">
+        {{hora.viewValue}}
+      </mat-option>
+    </mat-optgroup>
+  </mat-select>
+</mat-form-field>

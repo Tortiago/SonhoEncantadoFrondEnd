@@ -1,27 +1,22 @@
 <meta charset="utf-8">
 
-<mat-expansion-panel>
-
-  <mat-expansion-panel-header>
-    <mat-panel-title>Endereço</mat-panel-title>
-  </mat-expansion-panel-header>
+<h1>Endereço</h1>
 
   <form [formGroup]="end">
-    <mat-form-field>
+    <mat-form-field class="cep_cidade_bairro">
       <input formControlName="cep" id="txt-cep" matInput placeholder="CEP:" type="text" maxlength="9" mask="00000-000" />
     </mat-form-field>
-    <br />
 
-    <mat-form-field class="cidade">
+    <mat-form-field class="cep_cidade_bairro">
       <input formControlName="cidade" id="txt-cidade" matInput placeholder="Cidade:" type="text" maxlength="30"/>
     </mat-form-field>
 
-    <mat-form-field class="bairro">
+    <mat-form-field class="cep_cidade_bairro">
       <input formControlName="bairro" id="txt-bairro" matInput placeholder="Bairro:" type="text" maxlength="30"/>
     </mat-form-field>
     <br />
 
-    <mat-form-field class="logradouro">
+    <mat-form-field class="logradouro_referencia">
       <input formControlName="logradouro" id="txt-logradouro" matInput placeholder="Logradouro:" type="text" maxlength="50"/>
     </mat-form-field>
 
@@ -30,19 +25,18 @@
     </mat-form-field>
     <br />
 
-    <mat-form-field class="campoOitentaPorCento">
+    <mat-form-field class="logradouro_referencia">
       <input formControlName="pontoReferencia" id="txt-pontoReferencia" matInput placeholder="Ponto de referência:" type="text"
       maxlength="150"/>
     </mat-form-field>
     <br />
-    <!--
-    <mat-checkbox [formControl]="residoAp">Resido em apartamento:</mat-checkbox>
+   
+    <mat-checkbox (change)="apartamento($event)">Apartamento:</mat-checkbox>
     <br />
     
-    <app-form-end-apartamento *ngIf="residoAp"></app-form-end-apartamento>
--->
-    <button type="submit" (click)="onSubmit(end)">Submit</button>
+    <app-form-end-apartamento *ngIf="ap"></app-form-end-apartamento>
+   
+    <button mat-button type="submit" (click)="onSubmit(end)">Submit</button>
 
   </form>
   {{ end?.value | json }} and {{ end?.valid }}
-</mat-expansion-panel>

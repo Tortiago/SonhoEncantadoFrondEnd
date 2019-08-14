@@ -1,6 +1,11 @@
 .nomeCompleto {
-    width: 80%;
+    width: 88%;
 }
-.tamanho40 {
-    width: 40%;
+.nacionalidade-profissao {
+    width: 30%;
+    margin-left: 5px;
+}
+.rg-cpf{
+    width: 26%;
+    margin-left: 5px;
 }

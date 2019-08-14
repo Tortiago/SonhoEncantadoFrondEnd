@@ -13,9 +13,13 @@ export class EnderecoServiceService {
   }
 
   cadastrar(endModel: EnderecoModel): Observable<EnderecoModel> {
-    let httpHearders: HttpHeaders = new HttpHeaders();
-    httpHearders.set('Content-Type', 'application/json');
-    console.log()
+ 
+ 
+ 
+ 
+       let httpHearders: HttpHeaders = new HttpHeaders();
+          httpHearders.set('Content-Type', 'application/json');
+                  console.log()
     return this.http.post<EnderecoModel>("http://localhost:8080/endereco", endModel, {headers: httpHearders}).pipe(
       map(data => data));
   }

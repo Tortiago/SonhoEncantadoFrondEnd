@@ -1,0 +1,21 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav class="menu" mode="side" opened>
+    <mat-list>
+      <mat-nav-list>
+        <a id="linkProduct" mat-list-item routerLink="/product" routerLinkActive="pageActive">Produtos</a>
+      </mat-nav-list>
+      <mat-nav-list>
+        <a id="linkParty" mat-list-item routerLink="/party" routerLinkActive="pageActive">Festas</a>
+      </mat-nav-list>
+      <mat-nav-list>
+        <a id="linkCustomer" mat-list-item routerLink="/customer" routerLinkActive="pageActive">Clientes</a>
+      </mat-nav-list>
+      <mat-nav-list>
+        <a id="linkContract" mat-list-item routerLink="/contract" routerLinkActive="pageActive">Contrato</a>
+      </mat-nav-list>
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

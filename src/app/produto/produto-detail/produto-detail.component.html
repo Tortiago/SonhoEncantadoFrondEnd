@@ -1,0 +1,13 @@
+<div *ngIf="produto$ | async as produto; else loading">
+  <ul id="detahesProduto">
+    <li>Titulo: {{produto.titulo}}</li>
+    <li>Detalhe: {{produto.detalhe}}</li>
+    <li>Quantidade: {{produto.quantidade}}</li>
+    <li>Valor unitário: {{produto.valorUnitario}}</li>
+  </ul>
+
+</div>
+
+<ng-template #loading>
+  <mat-spinner id="spinner" class="loading"></mat-spinner>
+</ng-template>

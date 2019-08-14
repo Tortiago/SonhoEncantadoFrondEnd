@@ -17,7 +17,6 @@ export class FormEnderecoComponent implements OnInit {
   constructor(private fb: FormBuilder,
     private endService: EnderecoServiceService) { }
 
-  residoAp = new FormControl();
   end: FormGroup;
 
   ngOnInit() {
@@ -40,5 +39,12 @@ export class FormEnderecoComponent implements OnInit {
       this.end.get("numero").value,
       this.end.get("pontoReferencia").value);
     this.endService.cadastrar(endModel).subscribe(data => console.log("request sucessfuly"));
+  }
+
+  ap=false;
+
+  apartamento(event){
+    console.log(event);
+    this.ap = event.checked;
   }
 }
